@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import time
-import socket
+import requests
 from flask import Flask
 
 app = Flask(__name__)
@@ -16,10 +16,13 @@ def elapsed():
 
 @app.route('/')
 def root():
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
+    try:
+        ip_address = requests.get('https://api.ipify.org').text
+    except requests.RequestException:
+        ip_address = "Unable to fetch IP"
     return f"Hello World (Python)! (up {elapsed()})\nInstance IP: {ip_address}\n"
 
 if __name__ == "__main__":
     from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
+    
