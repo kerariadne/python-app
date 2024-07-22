@@ -1,0 +1,20 @@
+Install Docker  and git On Instance
+
+wget https://releases.rancher.com/install-docker/20.10.sh
+sh 20.10.sh
+sudo systemctl status docker
+sudo chmod 777 /var/run/docker.sock 
+sudo apt-get update
+sudo apt-get install git
+
+Clone the Repository and Build the Docker Image
+
+git clone https://github.com/kerariadne/python-app
+
+docker build -t tamarabr/flask-hello-world .
+docker run -p -d 8080:8080 tamarabr/flask-hello-world
+
+docker login
+docker tag tamarabr/flask-hello-world tamarabr/flask-hello-world:v1.0
+docker push tamarabr/flask-hello-world
+docker push tamarabr/flask-hello-world:v1.0
