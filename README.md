@@ -5,9 +5,8 @@ This is a simple Flask application that displays "Hello World" and the IP addres
 ## Files
 
 - `app.py`: The main Flask application.
-- `Dockerfile`: The Dockerfile to build the Docker image.
 - `requirements.txt`: A file listing the Python dependencies.
-
+- `service.yml`
 ## Instructions
 
 1. **Clone the repository:**
