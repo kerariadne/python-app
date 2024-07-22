@@ -12,5 +12,5 @@ This is a simple Flask application that displays "Hello World" and the IP addres
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/kerariadne/python-app
+   cd python-app
